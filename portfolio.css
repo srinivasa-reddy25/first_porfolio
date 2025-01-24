@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.navbar{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 25px 9%;
+     /* background-colo r:purple; */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 100;
+     visibility: hidden;
+     opacity: 0;
+     animation: show-navbar 1.5s linear forwards;
+     animation-delay: 1.2s;
+}
+
+@keyframes show-navbar {
+    100%{
+    visibility: visible;
+     opacity: 1;
+    }
+}
+
+
+.navbar .logo{
+    font-size: 30px;
+    font-weight: 700;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+}
+.navbar ul li{
+    list-style-type:none; 
+    margin-left: 35px;
+}
+.navbar ul li a{
+    font-size: 20px;
+    font-weight: 500 ;
+    transition: all 0.5s linear 0s;
+}
+.navbar ul li:hover a,
+li.active a {
+    color: #7cf03d;
+    
+   }
+.hero{
+    display: flex;
+    align-items: center; 
+    height: 100vh;
+    padding: 60px 9% 0;
+    gap:  50px;
+    color: #ffffff;
+    visibility: hidden;
+     opacity: 0;
+     animation: show-navbar 1.5s linear forwards;
+     animation-delay: 1.6s;
+
+}
+.hero_info h1{
+    font-size: 55px;
+}
+.hero_info h2{
+    font-size: 32px;
+    margin-top: -10px;
+}
+.hero_info p{
+    font-size: 16px;
+    margin: 10px 0px 25px;
+}
+.link_section{
+    display: flex;
+    align-items: center;
+}
+.resume_button{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #7cf03d;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow: 0 0 10px  #7cf03d;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+    transition: all 0.5s ;
+
+}
+.resume_button:hover{
+    background-color: transparent;
+    box-shadow: none;
+    color: #7cf03d;
+}
+.other_links{
+     margin-left: 20px;
+}
+.hero_info .link_section .other_links a{
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7cf03d;
+    margin: 0 8px ;
+    transition: 0.5s;
+    /* display: inline; */
+
+}
+.hero_info .link_section .other_links a:hover{
+    color: #1f242d;
+    background-color: #7cf03d;
+    box-shadow: 0 0 10px #7cf03d;
+}
+.image_container .animation_div{
+    height:32vw ;
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image_container .animation_div::before,
+.image_container .animation_div::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent,transparent, #7cf03d);
+    transform: rotate(0deg);
+    animation:round-image 10s linear infinite ;
+
+
+}
+.image_container .animation_div::after{
+    animation-delay: -5s;
+}
+@keyframes round-image {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.image_container .animation_div .image_info{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color:#1f242d;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1 ;
+    border: .1px solid #1f242d;
+}
+.image_container .animation_div .image_info img{
+    top: 30px;
+    position: absolute;
+    width: 85%;
+    display: block;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+
+}
+.bars_animation{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+
+}
+.bars_animation .bars{
+    width: 100%;
+    height: 100%;
+    background-color: #1f242d;
+    /* border: 2px solid red; */
+    transform: translatey(-100%);
+    animation: show-bars 0.5s ease-in-out forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes show-bars {
+    100%{
+        transform: translatey(0%);
+    }
+}
